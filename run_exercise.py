@@ -1,5 +1,5 @@
 import sys
-from solution.exercise4 import Exercise
+from solution.exercise4 import Exercise #cambiar para cambiar de ejercicio
 
 
 if __name__ == '__main__':

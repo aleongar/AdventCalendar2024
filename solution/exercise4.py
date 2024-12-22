@@ -3,7 +3,6 @@ class Exercise:
         self.formatData(data)
 
     def formatData(self, data: str):
-        # Asegurar que todas las filas tengan la misma longitud
         max_length = max(len(row) for row in data.splitlines())
         self.data = [line.ljust(max_length) for line in data.splitlines()]
 
@@ -13,8 +12,8 @@ class Exercise:
     def countVertically(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(cols):  # Recorre todas las columnas
+        for i in range(rows - 3): 
+            for j in range(cols):
                 if (self.data[i][j] == 'X' and self.data[i+1][j] == 'M' and
                     self.data[i+2][j] == 'A' and self.data[i+3][j] == 'S'):
                     summatory += 1
@@ -23,8 +22,8 @@ class Exercise:
     def countVerticallyReverse(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(cols):  # Recorre todas las columnas
+        for i in range(rows - 3): 
+            for j in range(cols):
                 if (self.data[i][j] == 'S' and self.data[i+1][j] == 'A' and
                     self.data[i+2][j] == 'M' and self.data[i+3][j] == 'X'):
                     summatory += 1
@@ -33,8 +32,8 @@ class Exercise:
     def countDiagonalDownRight(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(cols - 3):  # Evita salir del rango de columnas
+        for i in range(rows - 3):
+            for j in range(cols - 3): 
                 if (self.data[i][j] == 'X' and self.data[i+1][j+1] == 'M' and
                     self.data[i+2][j+2] == 'A' and self.data[i+3][j+3] == 'S'):
                     summatory += 1
@@ -43,8 +42,8 @@ class Exercise:
     def countDiagonalDownLeft(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(3, cols):  # Asegura que haya suficiente espacio hacia la izquierda
+        for i in range(rows - 3): 
+            for j in range(3, cols): 
                 if (self.data[i][j] == 'X' and self.data[i+1][j-1] == 'M' and
                     self.data[i+2][j-2] == 'A' and self.data[i+3][j-3] == 'S'):
                     summatory += 1
@@ -53,8 +52,8 @@ class Exercise:
     def countDiagonalDownRightReverse(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(cols - 3):  # Evita salir del rango de columnas
+        for i in range(rows - 3): 
+            for j in range(cols - 3): 
                 if (self.data[i][j] == 'S' and self.data[i+1][j+1] == 'A' and
                     self.data[i+2][j+2] == 'M' and self.data[i+3][j+3] == 'X'):
                     summatory += 1
@@ -63,8 +62,8 @@ class Exercise:
     def countDiagonalDownLeftReverse(self):
         summatory = 0
         rows, cols = len(self.data), len(self.data[0])
-        for i in range(rows - 3):  # Evita salir del rango de filas
-            for j in range(3, cols):  # Asegura que haya suficiente espacio hacia la izquierda
+        for i in range(rows - 3): 
+            for j in range(3, cols):  
                 if (self.data[i][j] == 'S' and self.data[i+1][j-1] == 'A' and
                     self.data[i+2][j-2] == 'M' and self.data[i+3][j-3] == 'X'):
                     summatory += 1
